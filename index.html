@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="nameWebsite">
+        <h3>Historical mosques</h3>
+      </div>
+
+      <div class="headerLists">
+        <a href="index.html">HOME</a>
+        <a href="mosques.html">MOSQUES</a>
+        <a href="fav.html">FAVORITE</a>
+      </div>
+
+      <div class="search">
+        <input type="text" placeholder="Search" id="input" />
+        <button type="submit" class="btnSearch">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </header>
+
+    <div class="main">
+      <h1>
+        ​The website contains a world of historical mosques that built in
+        different date and what is its story. 
+      </h1>
+      <button onclick="window.location.href='mosques.html'">
+        ​​EXPLORE THE MOSQUES
+      </button>
+    </div>
+
+    <div class="footer-basic">
+      <footer>
+        <div class="social">
+          <a href="#"><i class="icon ion-social-instagram"></i></a
+          ><a href="#"><i class="icon ion-social-snapchat"></i></a
+          ><a href="#"><i class="icon ion-social-twitter"></i></a
+          ><a href="#"><i class="icon ion-social-facebook"></i></a>
+        </div>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Home</a></li>
+          <li class="list-inline-item"><a href="#">Services</a></li>
+          <li class="list-inline-item"><a href="#">About</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+        </ul>
+        <p class="copyright">Tuwaiq © 2021</p>
+      </footer>
+    </div>
+
+    <script>
+      document
+        .querySelector("input")
+        .addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            console.log(document.getElementById("input").value);
+            if (document.getElementById("input").value === "")
+              alert("Nothing to search");
+            else {
+              localStorage.setItem(
+                "search",
+                document.getElementById("input").value
+              );
+              window.location.href = "search.html";
+            }
+          }
+        });
+    </script>
+  </body>
+</html>
